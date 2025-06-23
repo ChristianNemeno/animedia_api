@@ -68,7 +68,7 @@ createdb anime_market_db  # or use pgAdmin/psql
 # Create Django project
 django-admin startproject anime_market_backend
 cd anime_market_backend
-python manage.py startapp market_api
+python manage.py startapp core_api
 
 # Run migrations and create superuser
 python manage.py migrate
@@ -138,7 +138,7 @@ README.md
 anime_market/      # Django project settings
   ├ settings.py
   ├ urls.py
-market_api/        # Core app
+core_api/        # Core app
   ├ models.py
   ├ serializers.py
   ├ views.py
@@ -156,7 +156,7 @@ requirements.txt   # pip freeze > requirements.txt
 
 ```
 
-## 8. Data Models (`market_api/models.py`)
+## 8. Data Models (`core_api/models.py`)
 
 - **TradeItem**: title, description, image (ImageField with local storage), interests, status (Available/Traded), owner (ForeignKey to User), created_at.
 - **UserProfile**: OneToOne with User, avatar (ImageField), bio, genres, wishlist (ManyToMany to TradeItem).
